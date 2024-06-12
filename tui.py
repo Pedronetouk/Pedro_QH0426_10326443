@@ -7,14 +7,18 @@ Any errors or invalid inputs should be handled appropriately.
 Please note that you do not need to read the data file or perform any other such processing in this module.
 """
 
+
 def display_title(title):
     print(f"{title}\n{'=' * len(title)}")
+
 
 def main_menu():
     print("[A] View Data")
     print("[B] Visualize Data")
     print("[X] Exit")
     return input("Please enter your choice: ").strip().upper()
+# PNETO
+
 
 def view_data_menu():
     print("View Data Menu:")
@@ -24,6 +28,8 @@ def view_data_menu():
     print("[D] Average Score by Park and Location")
     print("[X] Return to Main Menu")
     return input("Please enter your choice: ").strip().upper()
+# PNETO
+
 
 def visualize_data_menu():
     print("Visualize Data Menu:")
@@ -33,6 +39,7 @@ def visualize_data_menu():
     print("[D] Most Popular Month by Park")
     print("[X] Return to Main Menu")
     return input("Please enter your choice: ").strip().upper()
+
 
 def get_input(prompt):
     return input(prompt).strip()

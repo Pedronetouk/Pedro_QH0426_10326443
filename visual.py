@@ -2,6 +2,8 @@ import matplotlib.pyplot as plt
 from collections import Counter, defaultdict
 import datetime
 import calendar
+# PNETO
+
 
 def clean_reviews(reviews):
     cleaned_reviews = []
@@ -18,15 +20,17 @@ def clean_reviews(reviews):
     # print(f"Cleaned dataset with {len(cleaned_reviews)} valid reviews.")
     return cleaned_reviews
 
+
 def plot_reviews_per_park(reviews):
     park_counts = Counter(review['Branch'] for review in reviews)
     parks = list(park_counts.keys())
     counts = list(park_counts.values())
-
+# PNETO
     plt.figure(figsize=(10, 5))
     plt.pie(counts, labels=parks, autopct='%1.1f%%')
     plt.title('Number of Reviews per Park')
     plt.show()
+
 
 def plot_avg_scores_per_park(reviews):
     park_scores = defaultdict(list)
@@ -46,6 +50,7 @@ def plot_avg_scores_per_park(reviews):
     plt.xticks(rotation=45)
     plt.show()
 
+
 def plot_top_10_locations(reviews, park):
     location_scores = defaultdict(list)
     for review in reviews:
@@ -53,7 +58,7 @@ def plot_top_10_locations(reviews, park):
             location = review['Reviewer_Location']
             rating = int(review['Rating'])
             location_scores[location].append(rating)
-
+# PNETO
     avg_scores = {location: sum(scores) / len(scores) for location, scores in location_scores.items()}
     top_10_locations = sorted(avg_scores.items(), key=lambda x: x[1], reverse=True)[:10]
 
@@ -67,6 +72,7 @@ def plot_top_10_locations(reviews, park):
     plt.title(f'Top 10 Locations for {park}')
     plt.xticks(rotation=45)
     plt.show()
+
 
 def plot_monthly_avg_ratings(reviews, park):
     monthly_scores = defaultdict(list)
@@ -90,3 +96,4 @@ def plot_monthly_avg_ratings(reviews, park):
     plt.title(f'Average Monthly Ratings for {park}')
     plt.xticks(rotation=45)
     plt.show()
+    # PNETO

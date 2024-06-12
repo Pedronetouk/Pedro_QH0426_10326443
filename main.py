@@ -2,13 +2,14 @@ import tui
 import process
 import visual
 
-def main():
-    tui.display_title("Disneyland Reviews Analysis")
-    reviews = process.read_csv('disneyland_reviews.csv')
-    reviews = visual.clean_reviews(reviews)  # Clean reviews before further processing
 
-    # No need to print the number of cleaned reviews
-    print("Please enter the letter which corresponds with your desired menu choice:")
+def main():
+    tui.display_title("Disneyland Reviews Analysis program")
+    reviews = process.read_csv('disneyland_reviews.csv')
+    reviews = visual.clean_reviews(reviews)  # Clean reviews bF further processing/PNTO
+
+    # No need to print the number of cleaned reviewes/PNETO
+    print("Please enter the letter which corresponds your menu choice:")
 
     while True:
         choice = tui.main_menu()
@@ -17,10 +18,11 @@ def main():
         elif choice == 'B':
             visualize_data_menu(reviews)
         elif choice == 'X':
-            print("Exiting the program. Goodbye!")
+            print("Thanks ofr using the program. Goodbye!")
             break
         else:
             print("Invalid choice. Please select a valid option.")
+
 
 def view_data_menu(reviews):
     while True:
@@ -43,6 +45,7 @@ def view_data_menu(reviews):
         else:
             print("Invalid choice. Please select a valid option.")
 
+
 def visualize_data_menu(reviews):
     while True:
         choice = tui.visualize_data_menu()
@@ -61,10 +64,6 @@ def visualize_data_menu(reviews):
         else:
             print("Invalid choice. Please select a valid option.")
 
+
 if __name__ == '__main__':
     main()
-
-
-
-
-
